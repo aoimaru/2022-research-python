@@ -75,15 +75,18 @@ def to_json(tag, contents):
 
     return data
 
-
-def main():
+def test():
     trainings = create_training_data()
     # create_model(trainings)
     contents = {}
     for word, training in trainings.items():
-        # print(word, training)
         contents[word] = training
     print(json.dumps(contents))
+
+def main():
+    trainings = create_training_data()
+    for training in trainings:
+        print(training)
 
 
 if __name__ == "__main__":
